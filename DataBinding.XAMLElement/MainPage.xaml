@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBinding.XAMLElement.MainPage">
+
+    <VerticalStackLayout Margin="8">
+        <Label Text="Escriba un mensaje:" />
+        <Entry TextChanged="Entry_TextChanged"
+               x:Name="TextEntry"/>
+        <Border Margin="8"
+                Padding="16">
+            <VerticalStackLayout>
+                <Label Text="El usuario escribió:"/>
+                <Label Text="Aquí aparecerá lo que escribió el usuario"
+                       Margin="16"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       x:Name="TextLabel"/>
+            </VerticalStackLayout>
+        </Border>
+    </VerticalStackLayout>
+</ContentPage>
