@@ -5,13 +5,12 @@
 
     <VerticalStackLayout Margin="8">
         <Label Text="Escriba un mensaje:" />
-        <Entry TextChanged="Entry_TextChanged"
-               x:Name="TextEntry"/>
+        <Entry x:Name="TextEntry"/>
         <Border Margin="8"
                 Padding="16">
             <VerticalStackLayout>
                 <Label Text="El usuario escribió:"/>
-                <Label Text="Aquí aparecerá lo que escribió el usuario"
+                <Label Text="{Binding Source={x:Reference TextEntry}, Path=Text}"
                        Margin="16"
                        HorizontalOptions="Center"
                        HorizontalTextAlignment="Center"
