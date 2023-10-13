@@ -6,10 +6,5 @@ public partial class MainPage : ContentPage
 	{
 		InitializeComponent();
 	}
-
-  //  private void Entry_TextChanged(object sender, TextChangedEventArgs e)
-  //  {
-		//TextLabel.Text = TextEntry.Text;
-  //  }
 }
 
