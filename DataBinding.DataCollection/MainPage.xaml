@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataBinding.DataCollection.MainPage"
+             Title="DataBinding a una colección">
+    <Grid RowDefinitions="Auto, *"
+          ColumnDefinitions="*">
+        <Border Grid.Row="0" Grid.Column="0"
+                Margin="8"
+                Padding="8">
+            <Grid RowDefinitions="*"
+                  ColumnDefinitions="Auto,*,Auto">
+                <Label Grid.Row="0" Grid.Column="0"
+                       Text="Usuario:"
+                       VerticalOptions="Center"/>
+                <Entry Grid.Row="0" Grid.Column="1"
+                       VerticalOptions="Center"
+                       Margin="8,0"
+                       x:Name="NameEntry"
+                       Text="{Binding Path=Name}"/>
+                <Button Grid.Row="0" Grid.Column="2"
+                        Text="Agregar" 
+                        VerticalOptions="Center"
+                        Clicked="OnAddButtonClicked"/>
+            </Grid>
+        </Border>
+        <CollectionView Grid.Row="1" Grid.Column="0"
+                        Margin="8"
+                        SelectionMode="Single"
+                        x:Name="UsersCollectionView"
+                        ItemsSource="{Binding}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Path=Name}"
+                           FontSize="16"
+                           Padding="10,0,0,0"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <!--<CollectionView.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Bruce Wayne</x:String>
+                    <x:String>Clark Kent</x:String>
+                    <x:String>Peter Parker</x:String>
+                </x:Array>
+            </CollectionView.ItemsSource>-->
+        </CollectionView>
+    </Grid>
+    
+</ContentPage>
